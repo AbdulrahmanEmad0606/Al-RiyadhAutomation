@@ -17,7 +17,7 @@ public class NavigateToTasksTCs extends GlobalSetup {
      * HomePage object representing the home page of the user portal.
      */
     HomePage homePage;
-
+    String reportStatus,assignedRoles,actions,actionOptions;
     /**
      * ReportDetailsPage object representing the report details page of the user portal.
      */
@@ -28,10 +28,6 @@ public class NavigateToTasksTCs extends GlobalSetup {
      */
     LoginTests loginTests;
 
-    /**
-     * The path to the JSON file containing the test data for the supervisor tests.
-     */
-    String testData;
 
     /**
      * MaradimCheckList object representing the Maradim checklist page of the user portal.
@@ -52,7 +48,10 @@ public class NavigateToTasksTCs extends GlobalSetup {
         homePage = new HomePage(driver.getWebDriver());
         reportDetailsPage = new ReportDetailsPage(driver.getWebDriver());
         loginTests = new LoginTests();
-        testData = "TestData/Data/MaradimData.json";
+        reportStatus = "TestData/Data/MaradimReportStatus.json";
+        assignedRoles = "TestData/Data/MaradimAssignedRoles.json";
+        actions = "TestData/Data/MaradimReportActions.json";
+        actionOptions = "TestData/Data/MaradimactionOptions.json";
         loginTests.testSupervisorValidLogin();
     }
 
@@ -85,8 +84,8 @@ public class NavigateToTasksTCs extends GlobalSetup {
     private void performTask(String status, String assignee) {
         homePage.navigateToTaskPage().showAllTasks()
                 .navigateToReportDetails()
-                .assertReportState(getJson(testData, "reportStatus", status))
-                .assertAssignedTo(getJson(testData, "assignTo", assignee));
+                .assertReportState(getJson(reportStatus, "reportStatus", status))
+                .assertAssignedTo(getJson(assignedRoles, "assignTo", assignee));
     }
 
     /**
@@ -99,13 +98,13 @@ public class NavigateToTasksTCs extends GlobalSetup {
      * @param assignee The expected assignee of the report.
      */
     private void performApproval(String action, String option1, String option2, String status, String assignee) {
-        reportDetailsPage.clickOnShowActionsBtn().selectSpecificAction(getJson(testData, "actions", action))
-                .checkRequiredActions(getJson(testData, "actionOptions", option1))
-                .checkRequiredActions(getJson(testData, "actionOptions", option2))
+        reportDetailsPage.clickOnShowActionsBtn().selectSpecificAction(getJson(action, "actions", action))
+                .checkRequiredActions(getJson(actionOptions, "actionOptions", option1))
+                .checkRequiredActions(getJson(actionOptions, "actionOptions", option2))
                 .clickYesBtn()
                 .assertToastMessageIsDisplayed()
-                .assertReportState(getJson(testData, "reportStatus", status))
-                .assertAssignedTo(getJson(testData, "assignTo", assignee));
+                .assertReportState(getJson(reportStatus, "reportStatus", status))
+                .assertAssignedTo(getJson(assignedRoles, "assignTo", assignee));
     }
 
     /**

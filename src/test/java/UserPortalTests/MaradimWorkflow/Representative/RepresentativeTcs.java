@@ -31,7 +31,7 @@ public class RepresentativeTcs extends GlobalSetup {
     /**
      * The path to the JSON file containing the test data for the representative tests.
      */
-    String testData;
+    String reportStatus,assignedRoles,actions,actionOptions;
 
     /**
      * Sets up the test environment by initializing the HomePage, ReportDetailsPage, and LoginTests objects,
@@ -42,7 +42,10 @@ public class RepresentativeTcs extends GlobalSetup {
         homePage = new HomePage(driver.getWebDriver());
         reportDetailsPage = new ReportDetailsPage(driver.getWebDriver());
         loginTests = new LoginTests();
-        testData = "TestData/Data/MaradimData.json";
+        reportStatus = "TestData/Data/MaradimReportStatus.json";
+        assignedRoles = "TestData/Data/MaradimAssignedRoles.json";
+        actions = "TestData/Data/MaradimReportActions.json";
+        actionOptions = "TestData/Data/MaradimactionOptions.json";
         loginTests.testRepresentativeValidLogin();
     }
 
@@ -75,8 +78,8 @@ public class RepresentativeTcs extends GlobalSetup {
     private void performTask(String status, String assignee) {
         homePage.navigateToTaskPage().showAllTasks()
                 .navigateToReportDetails()
-                .assertReportState(getJson(testData, "reportStatus", status))
-                .assertAssignedTo(getJson(testData, "assignTo", assignee));
+                .assertReportState(getJson(reportStatus, "reportStatus", status))
+                .assertAssignedTo(getJson(assignedRoles, "assignTo", assignee));
     }
 
     /**
@@ -91,16 +94,16 @@ public class RepresentativeTcs extends GlobalSetup {
      */
     private void performApproval(String action, String option1, String option2, String status, String assignee, String action2) {
         reportDetailsPage.clickOnShowActionsBtn()
-                .selectSpecificAction(getJson(testData, "actions", action))
-                .checkRequiredActions(getJson(testData, "actionOptions", option1))
-                .checkRequiredActions(getJson(testData, "actionOptions", option2))
+                .selectSpecificAction(getJson(action, "actions", action))
+                .checkRequiredActions(getJson(actionOptions, "actionOptions", option1))
+                .checkRequiredActions(getJson(actionOptions, "actionOptions", option2))
                 .clickYesBtn()
                 .assertToastMessageIsDisplayed()
-                .assertReportState(getJson(testData, "reportStatus", status))
-                .assertAssignedTo(getJson(testData, "assignTo", assignee))
-                .clickOnShowActionsBtn().selectSpecificAction(getJson(testData, "actions", action2))
-                .checkRequiredActions(getJson(testData,"actionOptions", option1))
-                .checkRequiredActions(getJson(testData, "actionOptions", option2))
+                .assertReportState(getJson(reportStatus, "reportStatus", status))
+                .assertAssignedTo(getJson(reportStatus, "assignTo", assignee))
+                .clickOnShowActionsBtn().selectSpecificAction(getJson(action, "actions", action2))
+                .checkRequiredActions(getJson(actionOptions,"actionOptions", option1))
+                .checkRequiredActions(getJson(actionOptions, "actionOptions", option2))
                 .clickYesBtn()
                 .assertToastMessageIsDisplayed();
     }

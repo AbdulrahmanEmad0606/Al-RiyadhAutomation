@@ -14,7 +14,7 @@ public class LoginTests extends GlobalSetup {
     /**
      * The path to the JSON file containing the test data for the login tests.
      */
-    String loginTestData = "TestData/Data/MaradimData.json";
+    String loginTestData = "TestData/Data/MaradimRoles.json";
 
     /**
      * LoginPage object representing the login page of the user portal.
@@ -28,10 +28,10 @@ public class LoginTests extends GlobalSetup {
     @Test
     public void testInspectorValidLogin() {
         boolean greetingMSG =
-                loginPage.setUserName(getJson(loginTestData, "roles","inspector","inspectorUsername"))
-                        .setPassword(getJson(loginTestData, "roles","inspector","inspectorPassword"))
+                loginPage.setUserName(getJson(loginTestData,"inspector","inspectorUsername"))
+                        .setPassword(getJson(loginTestData,"inspector","inspectorPassword"))
                         .clickLoginBtn()
-                        .getGreeting(getJson(loginTestData, "roles","inspector","InspectorName"));
+                        .getGreeting(getJson(loginTestData, "inspector","InspectorName"));
         Assert.assertTrue(greetingMSG, "Login Failed");
     }
 
@@ -42,10 +42,10 @@ public class LoginTests extends GlobalSetup {
     @Test
     public void testSupervisorValidLogin() {
         boolean greetingMSG =
-                loginPage.setUserName(getJson(loginTestData, "roles","supervisor","supervisorUsername"))
-                        .setPassword(getJson(loginTestData, "roles","supervisor","supervisorPassword"))
+                loginPage.setUserName(getJson(loginTestData,"inspector","inspectorUsername"))
+                        .setPassword(getJson(loginTestData,"inspector","inspectorPassword"))
                         .clickLoginBtn()
-                        .getGreeting(getJson(loginTestData, "roles","supervisor","supervisorName"));
+                        .getGreeting(getJson(loginTestData, "inspector","InspectorName"));
         Assert.assertTrue(greetingMSG, "Login Failed");
     }
 
@@ -56,10 +56,10 @@ public class LoginTests extends GlobalSetup {
     @Test
     public void testRepresentativeValidLogin() {
         boolean greetingMSG =
-                loginPage.setUserName(getJson(loginTestData, "roles","representative","representativeUsername"))
-                        .setPassword(getJson(loginTestData, "roles","representative","representativePassword"))
+                loginPage.setUserName(getJson(loginTestData, "representative","representativeUsername"))
+                        .setPassword(getJson(loginTestData,"representative","representativePassword"))
                         .clickLoginBtn()
-                        .getGreeting(getJson(loginTestData, "roles","representative","representativeName"));
+                        .getGreeting(getJson(loginTestData,"representative","representativeName"));
         Assert.assertTrue(greetingMSG, "Login Failed");
     }
 
@@ -70,8 +70,8 @@ public class LoginTests extends GlobalSetup {
     @Test
     public void testInValidLogin() {
         Label errorMsg =
-                loginPage.setInvalidUserName(getJson(loginTestData, "roles","inspector","inspectorInvalidUsername"))
-                        .setInvalidPassword(getJson(loginTestData, "roles","inspector","inspectorInvalidPassword"))
+                loginPage.setInvalidUserName(getJson(loginTestData,"inspector","inspectorInvalidUsername"))
+                        .setInvalidPassword(getJson(loginTestData,"inspector","inspectorInvalidPassword"))
                         .clickOnLoginBTNForInvalidCred();
         Assert.assertTrue((errorMsg.isDisplayed()), "in valid login failed");
     }

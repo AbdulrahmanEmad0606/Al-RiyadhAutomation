@@ -1,0 +1,23 @@
+{
+    "inspector": {
+      "inspectorUsername": "maradim.ins",
+      "inspectorPassword": "123456",
+      "inspectorInvalidUsername": "brad",
+      "inspectorInvalidPassword": "password",
+      "InspectorName": "مراقب بلدية(الرقابة علي المرادم)"
+    },
+    "supervisor": {
+      "supervisorUsername": "maradim.sv",
+      "supervisorPassword": "123456",
+      "supervisorInvalidUsername": "brad",
+      "supervisorInvalidPassword": "password",
+      "supervisorName": "مشرف بلدية (الرقابة على المرادم)"
+    },
+    "representative": {
+      "representativeUsername": "maradim.rep",
+      "representativePassword": "123456",
+      "supervisorInvalidUsername": "brad",
+      "supervisorInvalidPassword": "password",
+      "representativeName": "مسؤول قسم التشغيل والصيانة"
+    }
+}
