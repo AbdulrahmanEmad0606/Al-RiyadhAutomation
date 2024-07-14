@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DOCTYPE declaration for the suite, specifying the TestNG DTD version -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- The suite for the Commercial Activities happy scenario workflow -->
+<suite name="Commercial Activities happy scenario workflow">
+
+    <!-- The test for the Al Riyadh Automation scenario, with verbose level 2 and order preservation -->
+    <test verbose="2" preserve-order="true" name="D:/Al Riyadh Automation">
+        <classes>
+            <!-- The class for the Inspector role in the Maradim workflow -->
+            <class name="UserPortalTests.MaradimWorkflow.InspectorRole.SubmitReport">
+                <methods>
+                    <!-- The method for checking that the Inspector can submit a report -->
+                    <include name="checkThatTheInspectorCanSubmitReport"/>
+                </methods>
+            </class>
+            <!-- The class for the Supervisor role in the Maradim workflow -->
+            <class name="UserPortalTests.MaradimWorkflow.SupervisorRole.NavigateToTasksTCs">
+                <methods>
+                    <!-- The method for checking that the Supervisor can navigate to the currently submitted report -->
+                    <include name="checkThatTheSupervisorCanNavigateToTheCurrentlySubmittedReportTC"/>
+                    <!-- The method for checking that the Supervisor can approve the report -->
+                    <include name="checkThatTheSupervisorCanApproveTheReportTCs"/>
+                </methods>
+            </class>
+
+            <!-- The class for the Representative role in the Maradim workflow -->
+            <class name="UserPortalTests.MaradimWorkflow.Representative.RepresentativeTcs">
+                <methods>
+                    <!-- The method for checking that the Representative can navigate to the currently submitted report -->
+                    <include name="checkThatTheRepresentativeCanNavigateToTheCurrentlySubmittedReportTC"/>
+                    <!-- The method for checking that the Representative can approve the report -->
+                    <include name="checkThatTheRepresentativeCanApproveTheReportTC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
+
+<!-- Note: We need to logout after class -->

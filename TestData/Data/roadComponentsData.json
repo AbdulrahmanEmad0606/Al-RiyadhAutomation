@@ -1,0 +1,28 @@
+{
+  "roles": {
+  "inspector": {
+    "inspectorUsername": "KK78",
+    "inspectorPassword": "123456",
+    "inspectorInvalidUsername": "brad",
+    "inspectorInvalidPassword": "password",
+    "InspectorName": "مراقب البلديه مكونات الطرق"
+
+  },
+  "supervisor": {
+    "supervisorUsername": "KK78",
+    "supervisorPassword": "123456",
+    "supervisorInvalidUsername": "brad",
+    "supervisorInvalidPassword": "password"
+  }
+  },
+  "pages": {
+    "Activities": {
+      "ActivityName": " الرقابة على مكونات الطرق (Test) "
+    },
+    "Locations": {
+      "municipalityName": "شمال الرياض",
+      "districtName": "الملقا - بلدية شمال الرياض",
+      "streetName": "أنس بن مالك - حي الملقا - بلدية شمال الرياض"
+    }
+  }
+}

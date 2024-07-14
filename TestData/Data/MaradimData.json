@@ -1,0 +1,103 @@
+{
+  "roles": {
+    "inspector": {
+      "inspectorUsername": "maradim.ins",
+      "inspectorPassword": "123456",
+      "inspectorInvalidUsername": "brad",
+      "inspectorInvalidPassword": "password",
+      "InspectorName": "مراقب بلدية(الرقابة علي المرادم)"
+    },
+    "supervisor": {
+      "supervisorUsername": "maradim.sv",
+      "supervisorPassword": "123456",
+      "supervisorInvalidUsername": "brad",
+      "supervisorInvalidPassword": "password",
+      "supervisorName": "مشرف بلدية (الرقابة على المرادم)"
+    },
+    "representative": {
+      "representativeUsername": "maradim.rep",
+      "representativePassword": "123456",
+      "supervisorInvalidUsername": "brad",
+      "supervisorInvalidPassword": "password",
+      "representativeName": "مسؤول قسم التشغيل والصيانة"
+    }
+  },
+  "pages": {
+    "Activities": {
+      "ActivityName": " الرقابة علي المرادم "
+    },
+    "Locations": {
+      "municipalityName": "شقراء",
+      "districtName": "حى الياسمين - بلدية شقراء",
+      "streetName": "غير مسمي 676  1001 - حي حى الياسمين - بلدية شقراء"
+    }
+  },
+  "checkList": {
+    "questions": {
+      "question1": "وجود شاحنات والمعدات المخالفة",
+      "question2": "نظافة الطريق الموازي للمدفن",
+      "question3": "تواجد الجهاز الفني واالشرافي",
+      "question4": "الميزان",
+      "question5": "الانترنت",
+      "question6": "الاجهزة",
+      "question7": "عدد الردود مخلفات مختلطة",
+      "question8": "حوض التطهير",
+      "question9": "رش المياه",
+      "question10": "كاميرات المراقبة",
+      "question11": "برج المراقبة",
+      "question12": "الحراسة الأمنية",
+      "question13": "عدد الردود مخلفات حجر نظيفة",
+      "question14": "عدد الردود مخلفات حجر الغير نظيفة",
+      "question15": "شبكة الأمانة وشبكة الهواتف المحمول",
+      "question16": "وجود كساره",
+      "question17": "عدد الخلايا التي يتم العمل عليها",
+      "question18": "موقع الفرز",
+      "question19": "المواد المفرزة",
+      "question20": "البوابة اإللكترونية"
+    },
+    "answers": {
+      "answer1": "موجودة",
+      "answer2": "نظيف",
+      "answer3": "موجود",
+      "answer4": "يعمل",
+      "answer5": "موجود",
+      "answer6": "موجود",
+      "answer7": "25",
+      "answer8": "يوجد",
+      "answer9": "يوجد",
+      "answer10": "غير موجود",
+      "answer11": "موجود",
+      "answer12": "غير موجود",
+      "answer13": "25",
+      "answer14": "25",
+      "answer15": "غير موجود",
+      "answer16": "تعمل",
+      "answer17": "5",
+      "answer18": "مناسب",
+      "answer19": "معزولة",
+      "answer20": "تعمل",
+      "attachmentPath": "C:\\Users\\Public\\Pictures\\Sample Pictures\\Desert.jpg"
+    }
+  },
+  "reportStatus": {
+    "status1": "مفتوحة",
+    "status2": "مغلقة",
+    "status3": "تم اعتماد التقرير",
+    "status4": "تم قبول المعالجة",
+    "status5": "مغلق لأنتهاء المعالجة"
+  },
+  "assignTo": {
+    "assignee1": "مشرف البلدية",
+    "assignee2": "مسؤول قسم التشغيل والصيانة"
+  },
+  "actions": {
+    "approveAndAssignToOperationAndMaintenanceDepartment": "قبول التقرير واسنادة الى قسم الصيانة والتشغيل",
+    "cancelReport": "رفض التقرير",
+    "approveProcessing": "قبول المعالجة",
+    "processingCompleted": "تمت المعالجه"
+  },
+  "actionOptions": {
+    "option1": " الملاحظة ",
+    "option2": " الملحقات "
+  }
+}
